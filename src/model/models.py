@@ -12,7 +12,7 @@ class Notification(BaseModel):
 
 class abstractSubscriber(ABC):
     @abstractmethod
-    def receive_notification(self, *args, **kwargs):
+    def acknowledge_message(self, *args, **kwargs):
         pass
 
 
@@ -21,13 +21,14 @@ class Subscriber(abstractSubscriber):
         self.subscriber_display_name = subscriber_display_name
         self.subscriber_id = subscriber_id
 
-    def receive_notification(self, notification):
+    def acknowledge_message(self, notification):
         print(f"Received notification {notification} with data {notification.data}")
 
 
 class Topic:
-    def __init__(self, topic_name):
-        self.topic_name:str = topic_name
+    def __init__(self, topic_id: str, topic_name: str):
+        self.topic_id = topic_id
+        self.topic_name: str = topic_name
         self.subscribers: list[Subscriber] = []
 
     def _validate_data(self):
@@ -36,6 +37,6 @@ class Topic:
     def add_subscriber(self, subscriber: Subscriber) -> None:
         pass
 
-    def notify_subscribers(self, ) -> None:
+    def publish(self, ) -> None:
         for sub in self.subscribers:
-            sub.receive_notification()
+            sub.acknowledge_message()

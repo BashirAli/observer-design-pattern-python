@@ -1,21 +1,28 @@
-topics:
-  - topic_name: "Tech News"
-    subscribers:
-      - subscriber_display_name: "Alice"
-        subscriber_id: "sub1"
-      - subscriber_display_name: "Bob"
-        subscriber_id: "sub2"
-  - topic_name: "Sports Updates"
-    subscribers:
-      - subscriber_display_name: "Charlie"
-        subscriber_id: "sub3"
-      - subscriber_display_name: "David"
-        subscriber_id: "sub4"
-      - subscriber_display_name: "Eve"
-        subscriber_id: "sub5"
-  - topic_name: "Weather Alerts"
-    subscribers:
-      - subscriber_display_name: "Frank"
-        subscriber_id: "sub6"
-      - subscriber_display_name: "Grace"
-        subscriber_id: "sub7"
+name: "observer-design-pattern"
+version: 0.1.0
+description: "A user specified configuration defining infrastructure of objects in observer patten"
+infrastructure:
+  - topics:
+      - topic_id: topic_tech_news
+        topic_name: Tech News
+        subscribers:
+          - subscriber_display_name: Alice
+            subscriber_id: sub1
+          - subscriber_display_name: Bob
+            subscriber_id: sub2
+      - topic_id: topic_sports_updates
+        topic_name: Sports Updates
+        subscribers:
+          - subscriber_display_name: Charlie
+            subscriber_id: sub3
+          - subscriber_display_name: David
+            subscriber_id: sub4
+          - subscriber_display_name: Eve
+            subscriber_id: sub5
+      - topic_id: topic_weather_alerts
+        topic_name: Weather Alerts
+        subscribers:
+          - subscriber_display_name: Frank
+            subscriber_id: sub6
+          - subscriber_display_name: Grace
+            subscriber_id: sub7
