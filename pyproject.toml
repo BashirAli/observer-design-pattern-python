@@ -10,6 +10,7 @@ python = "3.12"
 pendulum = "==3.0.0"
 pydantic = {version = "==2.7.4", extras = ["email"]}
 pydantic-settings = "==2.0.3"
+PyYAML = "==5.2"
 
 [tool.poetry.dev-dependencies]
 
