@@ -1,0 +1,82 @@
+[
+    {
+        "customer_id": 1,
+        "name": "Alice Johnson",
+        "street": "10 Downing Street",
+        "city": "London",
+        "postcode": "SW1A 2AA",
+        "country": "United Kingdom"
+    },
+    {
+        "customer_id": 2,
+        "name": "Bob Smith",
+        "street": "123 Baker Street",
+        "city": "London",
+        "postcode": "NW1 6XE",
+        "country": "United Kingdom"
+    },
+    {
+        "customer_id": 3,
+        "name": "Charlie Brown",
+        "street": "22 Acacia Avenue",
+        "city": "Birmingham",
+        "postcode": "B14 7LN",
+        "country": "United Kingdom"
+    },
+    {
+        "customer_id": 4,
+        "name": "Davcustomer_id Wilson",
+        "street": "456 Elm Road",
+        "city": "Manchester",
+        "postcode": "M20 2ZX",
+        "country": "United Kingdom"
+    },
+    {
+        "customer_id": 5,
+        "name": "Emma Davis",
+        "street": "789 High Street",
+        "city": "Leeds",
+        "postcode": "LS1 2HQ",
+        "country": "United Kingdom"
+    },
+    {
+        "customer_id": 6,
+        "name": "Frank Clark",
+        "street": "101 Oak Street",
+        "city": "Glasgow",
+        "postcode": "G1 1AA",
+        "country": "United Kingdom"
+    },
+    {
+        "customer_id": 7,
+        "name": "Grace Lewis",
+        "street": "202 Maple Drive",
+        "city": "Edinburgh",
+        "postcode": "EH2 3DF",
+        "country": "United Kingdom"
+    },
+    {
+        "customer_id": 8,
+        "name": "Hannah Walker",
+        "street": "303 Pine Avenue",
+        "city": "Cardiff",
+        "postcode": "CF10 1EP",
+        "country": "United Kingdom"
+    },
+    {
+        "customer_id": 9,
+        "name": "Isaac Hall",
+        "street": "404 Birch Close",
+        "city": "Bristol",
+        "postcode": "BS1 6BQ",
+        "country": "United Kingdom"
+    },
+    {
+        "customer_id": 10,
+        "name": "Julia Adams",
+        "street": "505 Cedar Road",
+        "city": "Liverpool",
+        "postcode": "L1 1AA",
+        "country": "United Kingdom"
+    }
+]
