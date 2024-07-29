@@ -1,5 +1,5 @@
 import yaml
-from logger import logger
+from config.logger import logger
 
 
 def read_yaml_config(file_path: str) -> dict:

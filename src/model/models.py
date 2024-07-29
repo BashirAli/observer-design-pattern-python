@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from pydantic import Field, BaseModel
-import datetime
+from datetime import datetime
 
 
 class Notification(BaseModel):
@@ -26,7 +26,8 @@ class Subscriber(abstractSubscriber):
 
 
 class Topic:
-    def __init__(self):
+    def __init__(self, topic_name):
+        self.topic_name:str = topic_name
         self.subscribers: list[Subscriber] = []
 
     def _validate_data(self):
