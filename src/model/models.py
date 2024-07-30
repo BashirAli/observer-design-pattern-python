@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
+from datetime import datetime
+
 from pydantic import Field, BaseModel
 from pydantic_core import ValidationError
-from datetime import datetime
+
 from config.logger import logger
 
 
@@ -27,7 +29,7 @@ class Subscriber(abstractSubscriber):
         return f"{self.subscriber_display_name} has acknowledged notification {notification.notification_id} with data: {notification.data}, attributes: {notification.attributes} at {notification.notification_time}"
 
     def __repr__(self):
-        return f"{self.subscriber_display_name}"
+        return f"Subscriber Name: {self.subscriber_display_name}"
 
 
 class Topic:
@@ -55,8 +57,11 @@ class Topic:
     def set_subscribers(self, list_of_subscribers: list[Subscriber]):
         self.subscribers = list_of_subscribers
 
-    def publish(self, data: dict) -> None:
+    def publish(self, data: dict) -> list[str]:
+        ack_msgs = []
         publish_notification = self._validate_publish(data)
         if publish_notification:
             for sub in self.subscribers:
-                sub.acknowledge_message(publish_notification)
+                ack_msgs.append(sub.acknowledge_message(publish_notification))
+
+        return ack_msgs

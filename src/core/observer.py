@@ -1,3 +1,7 @@
+import random
+from config.logger import logger
+import pendulum
+
 from model.models import Topic, Subscriber
 
 
@@ -5,7 +9,7 @@ class Observer:
     def __init__(self):
         self.topics: list[Topic] = []
 
-    def create_infra(self, topic_config: dict):
+    def create_infra(self, topic_config: dict) -> None:
         for topic in topic_config:
             sub_list = []
             for sub in topic["subscribers"]:
@@ -26,6 +30,15 @@ class Observer:
 
         return new_topic
 
-    def notify(self, message):
-        pass
+    def notify(self, messages: list[dict]) -> None:
+        messages_enriched = (
+            list(map(lambda message: {"data": message, "notification_time": pendulum.now("Europe/London"),
+                                      "notification_id": str(random.randint(0, 100)),
+                                      "attributes": {}}, messages)))
+        ack_messages = [
+            topic.publish(message)
+            for message in messages_enriched
+            for topic in self.topics
+        ]
 
+        logger.info([ack for ack in ack_messages])
