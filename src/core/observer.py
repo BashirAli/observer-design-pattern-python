@@ -34,7 +34,7 @@ class Observer:
         messages_enriched = (
             list(map(lambda message: {"data": message, "notification_time": pendulum.now("Europe/London"),
                                       "notification_id": str(random.randint(0, 100)),
-                                      "attributes": {}}, messages)))
+                                      "attributes": {"test_attributes": ""}}, messages)))
         ack_messages = [
             topic.publish(message)
             for message in messages_enriched
