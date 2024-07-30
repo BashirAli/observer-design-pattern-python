@@ -4,6 +4,7 @@ from pydantic_core import ValidationError
 from datetime import datetime
 from config.logger import logger
 
+
 class Notification(BaseModel):
     data: dict = Field(..., description="dictionary of data")
     notification_time: datetime
@@ -36,7 +37,7 @@ class Topic:
         self.subscribers: list[Subscriber] = []
 
     def __repr__(self):
-        return f"{self.topic_name}, {self.subscribers}"
+        return f"Topic: {self.topic_name}, Subscribers: {self.subscribers}"
 
     @staticmethod
     def _validate_publish(data: dict) -> Notification | None:
@@ -50,6 +51,9 @@ class Topic:
 
     def add_subscriber(self, subscriber: Subscriber) -> None:
         self.subscribers.append(subscriber)
+
+    def set_subscribers(self, list_of_subscribers: list[Subscriber]):
+        self.subscribers = list_of_subscribers
 
     def publish(self, data: dict) -> None:
         publish_notification = self._validate_publish(data)
