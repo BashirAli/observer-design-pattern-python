@@ -37,7 +37,6 @@ def main():
         dummy_data = read_json_file(system_args.input_path_to_data)
         if dummy_data:
             logger.info("Publishing test message(s)")
-
             # notify subscribers
             observer_manager.notify(dummy_data)
 
