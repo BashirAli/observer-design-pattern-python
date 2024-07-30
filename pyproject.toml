@@ -13,6 +13,9 @@ pydantic-settings = "==2.0.3"
 PyYAML = "==5.2"
 
 [tool.poetry.dev-dependencies]
+pytest = "*"
+requests = "*"
+httpx = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
