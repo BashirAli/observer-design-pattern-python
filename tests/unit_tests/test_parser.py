@@ -1,6 +1,6 @@
-from unittest.mock import patch, mock_open
-import pytest
 import json
+from unittest.mock import patch, mock_open
+
 import yaml
 
 from config.parser import read_json_file, read_yaml_config

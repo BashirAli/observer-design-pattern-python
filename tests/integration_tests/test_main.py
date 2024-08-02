@@ -1,7 +1,7 @@
-import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
+
 from core.observer import Observer
-from main import run_observer
+from src.main import run_observer
 
 # Mock data for YAML configuration
 mock_yaml_data = {
@@ -32,9 +32,9 @@ mock_json_data = [
 
 def test_run_observer():
     # Patch the read_yaml_config and read_json_file functions to return mock data
-    with patch('config.parser.read_yaml_config', return_value=mock_yaml_data) as mock_read_yaml, \
-         patch('config.parser.read_json_file', return_value=mock_json_data) as mock_read_json, \
-         patch('config.logger.logger') as mock_logger:
+    with patch('src.config.parser.read_yaml_config', return_value=mock_yaml_data) as mock_read_yaml, \
+         patch('sec.config.parser.read_json_file', return_value=mock_json_data) as mock_read_json, \
+         patch('src.config.logger.logger') as mock_logger:
 
         # Call the run_observer function with mock paths
         run_observer('mock_path_to_yaml', 'mock_path_to_json')
@@ -59,6 +59,6 @@ def test_run_observer():
         assert len(observer_manager.topics[1].subscribers) == 1
 
         # Verify notification is called with mock messages
-        with patch('core.observer.Observer.notify', return_value=None) as mock_notify:
+        with patch('src.core.observer.Observer.notify', return_value=None) as mock_notify:
             observer_manager.notify(mock_json_data)
             mock_notify.assert_called_once_with(mock_json_data)

@@ -1,6 +1,7 @@
-import pytest
 from unittest.mock import patch
-from model.models import Topic, Subscriber
+
+import pytest
+
 from core.observer import Observer
 
 

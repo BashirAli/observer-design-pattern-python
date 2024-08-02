@@ -1,4 +1,5 @@
 import argparse
+
 from config.logger import logger
 from config.parser import read_yaml_config, read_json_file
 from core.observer import Observer
@@ -42,7 +43,6 @@ def run_observer(input_path_to_yaml, input_path_to_data):
 def main():
     system_args = arg_parser()
     run_observer(system_args.input_path_to_yaml, system_args.input_path_to_data)
-    # python3 src/main.py --input_path_to_yaml=src/main.yaml --input_path_to_data=src/data/uk_dummy_addresses.json
 
 
 if __name__ == "__main__":
