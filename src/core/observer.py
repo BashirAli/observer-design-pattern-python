@@ -9,7 +9,7 @@ class Observer:
     def __init__(self):
         self.topics: list[Topic] = []
 
-    def create_infra(self, topic_config: dict) -> None:
+    def create_infra(self, topic_config: list) -> None:
         for topic in topic_config:
             sub_list = []
             for sub in topic["subscribers"]:
