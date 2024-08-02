@@ -1,6 +1,8 @@
-import pytest
 from datetime import datetime
+
+import pytest
 from pydantic_core import ValidationError
+
 from model.models import Notification, Subscriber, Topic
 
 

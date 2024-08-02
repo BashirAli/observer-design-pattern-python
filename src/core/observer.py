@@ -1,7 +1,8 @@
 import random
-from config.logger import logger
+
 import pendulum
 
+from config.logger import logger
 from model.models import Topic, Subscriber
 
 
